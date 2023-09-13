@@ -8,12 +8,31 @@
     <!-- spring boot -->
     <a href="https://spring.io/projects/spring-boot">
     <img src="https://img.shields.io/badge/spring--boot-3.1.3-blue" /></a>&emsp;
+    <!-- mybatis -->
+    <a href="https://mybatis.org/mybatis-3/">
+    <img src="https://img.shields.io/badge/mybatis-3.5.7-blue" /></a>&emsp;
     </p>
+    <!-- Servlet -->
+    <a href="https://docs.oracle.com/javaee/7/api/javax/servlet/package-summary.html">
+    <img src="https://img.shields.io/badge/servlet-3.1.0-blue" /></a>&emsp;
+    <!-- mysql -->
+    <a href="https://www.mysql.com/">
+    <img src="https://img.shields.io/badge/mysql-8.0.23-blue" /></a>&emsp;
 </div>
 
 ## 项目简介
 
-本项目是一个基于 `Spring Boot` 后端 + `Vue3` 前台的项目，主要用于学习 Spring Boot 的使用。后端简单使用了 `Mybatis Plus`，前台使用了 `Vue3` + `Element Plus`。
+本项目主要用于学习 Spring Boot，项目中使用了 Spring Boot、Mybatis、Mybatis Plus、MySQL、Servlet 等技术。
+
+## TODO
+
+- [x] Spring Boot 权限控制
+- [x] Spring Boot 文件上传
+- [x] Spring Boot 文件下载
+- [x] Spring Boot 发送邮件
+
+上面这些可能会单独拆分出来，作为一个小项目。看情况而定。
+
 
 
 
