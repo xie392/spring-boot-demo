@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.InfoMapper">
+
+    <!--  给字段设置别名，对应 InfoEntity 映射 -->
+    <!--    <resultMap id="InfoMap" type="com.mybatis.entity.InfoEntity">-->
+    <!--        <id column="id" property="pid" />-->
+    <!--        <result column="name" property="name" />-->
+    <!--    </resultMap>-->
+
+    <!--  使用  -->
+    <!--    <select id="getInfo" resultType="InfoMap">-->
+    <!--        select * from Info where id = #{id}-->
+    <!--    </select>-->
+
+    <select id="getInfoList" resultType="com.mybatis.entity.InfoEntity">
+        select * from Info
+    </select>
+
+    <select id="getInfoById" resultType="com.mybatis.entity.InfoEntity" parameterType="String">
+        select * from Info where id = #{id}
+    </select>
+
+    <insert id="insertInfo" parameterType="com.mybatis.entity.InfoEntity">
+        INSERT INTO info(`id`, `name`, `age`, `gender`, `major`)
+        VALUES (#{id}, #{name}, #{age}, #{gender}, #{major});
+    </insert>
+
+    <update id="updateInfo" parameterType="com.mybatis.entity.InfoEntity">
+        UPDATE info SET `name` = #{name}, `age` = #{age}, `gender` = #{gender}, `major` = #{major} WHERE `id` = #{id};
+    </update>
+
+    <delete id="deleteInfo" parameterType="String">
+        DELETE FROM info WHERE `id` = #{id};
+    </delete>
+
+    <select id="getInfoSearch" resultType="com.mybatis.entity.InfoEntity" parameterType="com.mybatis.entity.InfoEntity">
+        <!--        select * from Info where-->
+        <!--        1 = 1-->
+        <!--        <if test="id!=null">and id = #{id} </if>-->
+        <!--        <if test="name!=null">and name = #{name} </if>-->
+        <!--        <if test="age!=null">and age = #{age} </if>-->
+        <!--        <if test="gender!=null">and gender = #{gender}</if>-->
+        <!--        <if test="major!=null">and major = #{major}</if>-->
+        select * from Info
+        <where>
+            <if test="id!=null">and id = #{id}</if>
+            <if test="name!=null">and name = #{name}</if>
+            <if test="age!=null">and age = #{age}</if>
+            <if test="gender!=null">and gender = #{gender}</if>
+            <if test="major!=null">and major = #{major}</if>
+        </where>
+    </select>
+
+</mapper>

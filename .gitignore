@@ -1,4 +1,9 @@
-client/node_modules
-server/target
+# client/node_modules
+# server/target
+
+**/node_modules
+**/target
+
+
 
 
